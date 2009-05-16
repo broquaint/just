@@ -9,7 +9,7 @@ my $build = Module::Build::Just->new(
     build_requires => {
         'Test.Simple' => '0.11',
     },
-    tags           => [qw[jsan use import libraries]],
+    tags           => [qw[just use import libraries]],
 );
 
 $build->create_build_script;

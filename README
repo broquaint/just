@@ -21,14 +21,6 @@ DESCRIPTION
     programming languages and offers the programmer the abilility to create
     well-designed, modular code.
 
-    */
-
-    var Just = function () { Just.addRepository(arguments) }
-
-    Just.VERSION = 0.09;
-
-    /*
-
   Class Properties
    globalScope
       Just.globalScope = _player;
@@ -208,11 +200,11 @@ DESCRIPTION
 
     Importing the default functions.
 
-      jsan.use('Name.Space');
+      just.use('Name.Space');
 
     Importing specific functions.
 
-      jsan.use('Name.Space', 'functionOne'); // Don't want functionTwo()
+      just.use('Name.Space', 'functionOne'); // Don't want functionTwo()
 
    EXPORT_OK
     Set up functions that are exported only by request.
@@ -223,12 +215,12 @@ DESCRIPTION
     Import the default functions. This will not import any functions inside
     the "EXPORT_OK" list.
 
-      jsan.use('Name.Space');
+      just.use('Name.Space');
 
     Import some specific function from "EXPORT_OK". This will not import any
     functions from the "EXPORT" list.
 
-      jsan.use('Name.Space', 'specialOne');
+      just.use('Name.Space', 'specialOne');
 
    EXPORT_TAGS
     Set up a grouping of functions that can be exported all at once. This
@@ -253,11 +245,11 @@ DESCRIPTION
 
     Now import all the functions.
 
-      jsan.use('Name.Space', ':all');
+      just.use('Name.Space', ':all');
 
     Import the common functions and one special one.
 
-      jsan.use('Name.Space', ':common', 'specialOne');
+      just.use('Name.Space', ':common', 'specialOne');
 
   Writing Libraries
    Class Libraries
