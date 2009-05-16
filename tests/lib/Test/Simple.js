@@ -1,11 +1,11 @@
 // # $Id: Kinetic.pm 1493 2005-04-07 19:20:18Z theory $
 
 // Set up package.
-if (typeof JSAN != 'undefined') new JSAN().use('Test.Builder');
+if (typeof Just != 'undefined') new Just().use('Test.Builder');
 else {
     if (typeof Test == 'undefined' || typeof Test.Builder == 'undefined')
         throw new Error(
-            "You must load either JSAN or Test.Builder "
+            "You must load either Just or Test.Builder "
             + "before loading Test.Simple"
         );
 }
@@ -24,6 +24,6 @@ Test.Simple.ok = function (val, desc) {
 };
 
 // Handle exporting.
-if (typeof JSAN == 'undefined') Test.Builder.exporter(Test.Simple);
+if (typeof Just == 'undefined') Test.Builder.exporter(Test.Simple);
 
 Test.Simple.Test = new Test.Builder();

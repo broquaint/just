@@ -2,11 +2,11 @@
 // Create a namespace for ourselves.
 
 // Set up package.
-if (typeof JSAN != 'undefined') new JSAN().use('Test.Builder');
+if (typeof Just != 'undefined') new Just().use('Test.Builder');
 else {
     if (typeof Test == 'undefined' || typeof Test.Builder == 'undefined')
         throw new Error(
-            "You must load either JSAN or Test.Builder "
+            "You must load either Just or Test.Builder "
             + "before loading Test.More"
         );
 }
@@ -426,4 +426,4 @@ Test.More.isa = function (object, clas) {
 };
 
 // Handle exporting.
-if (typeof JSAN == 'undefined') Test.Builder.exporter(Test.More);
+if (typeof Just == 'undefined') Test.Builder.exporter(Test.More);

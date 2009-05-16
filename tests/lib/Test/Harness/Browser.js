@@ -1,6 +1,6 @@
 // # $Id: Kinetic.pm 1493 2005-04-07 19:20:18Z theory $
 
-if (typeof JSAN != 'undefined') new JSAN().use('Test.Harness');
+if (typeof Just != 'undefined') new Just().use('Test.Harness');
 
 Test.Harness.Browser = function () {};
 Test.Harness.Browser.VERSION = '0.11';

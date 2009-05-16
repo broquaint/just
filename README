@@ -1,19 +1,19 @@
 NAME
-    JSAN - JavaScript Archive Network
+    Just - JavaScript Archive Network
 
 SYNOPSIS
-      <script type="text/javascript" src="/js/JSAN.js"></script>
+      <script type="text/javascript" src="/js/Just.js"></script>
       <script>
-          JSAN.use('Test.Simple');
+          Just.use('Test.Simple');
           plan({tests: 1});
           ok(1 == 1, 'one does equal one!');
       </script>
 
       // Or in a library.
       try {
-          JSAN.use('Some.Library');
+          Just.use('Some.Library');
       } catch (e) {
-          alert("Requires JSAN");
+          alert("Requires Just");
       }
 
 DESCRIPTION
@@ -23,15 +23,15 @@ DESCRIPTION
 
     */
 
-    var JSAN = function () { JSAN.addRepository(arguments) }
+    var Just = function () { Just.addRepository(arguments) }
 
-    JSAN.VERSION = 0.09;
+    Just.VERSION = 0.09;
 
     /*
 
   Class Properties
    globalScope
-      JSAN.globalScope = _player;
+      Just.globalScope = _player;
 
     By default "globalScope" is set to the value of "self". This works great
     in web browswers, however other environments may not have "self" (an
@@ -40,14 +40,14 @@ DESCRIPTION
     before calling "use()".
 
    includePath
-      JSAN.includePath = [];
+      Just.includePath = [];
 
     The "includePath" is a list of URLs that should be used as prefixes for
     libraries when they are "use()"d. If you are adding repositories please
     consider using the "addRepository()" method.
 
    errorLevel
-      JSAN.errorLevel = "die";
+      Just.errorLevel = "die";
 
     By default the "errorLevel" is set to *none*. This will supress errors
     when trying to load libraries.
@@ -59,24 +59,24 @@ DESCRIPTION
     to alert a user on error. This is good for debugging (in web browsers).
 
    errorMessage
-      var error = JSAN.errorMessage;
+      var error = Just.errorMessage;
 
     This contains the text of any error, no matter what the "errorLevel".
     Inspect it to discover problems.
 
    loaded
-      JSAN.loaded["Foo/Bar.js"] = Foo.Bar;
+      Just.loaded["Foo/Bar.js"] = Foo.Bar;
 
     This object lists path to class definition mappings. The object is
-    populated with members by "JSAN.require()". The class definition is the
+    populated with members by "Just.require()". The class definition is the
     one found when evaluating the package name during namespace creation. It
-    is the same class definition that "JSAN.require()" and "JSAN.use()"
+    is the same class definition that "Just.require()" and "Just.use()"
     returns.
 
   Class Methods
-   JSAN.use()
-        JSAN.use('Test.Simple');
-        JSAN.use('DOM.Display');
+   Just.use()
+        Just.use('Test.Simple');
+        Just.use('DOM.Display');
 
     Download and import a library. There is a mapping that is done with the
     library name: it must be converted into a URL. Here is how it works.
@@ -95,50 +95,50 @@ DESCRIPTION
     to import nothing. Here is an example of each.
 
       // Explicitly choose certain functions
-      JSAN.use('Test.More', 'plan', 'ok', 'is');
+      Just.use('Test.More', 'plan', 'ok', 'is');
   
       // Explicitly choose a certain tag
-      JSAN.use('Digest.MD5', ':all');
+      Just.use('Digest.MD5', ':all');
 
       // Explicitly choose nothing
-      JSAN.use('Digest.MD5', []);
+      Just.use('Digest.MD5', []);
 
       // Be really weird
       var stuff = [ 'h', 'i', ['j'] ];
       stuff.push( 'abc' );
-      JSAN.use('Some.Module', 'a', 'b', [ 'c', 'd' ], stuff, 'f' );
+      Just.use('Some.Module', 'a', 'b', [ 'c', 'd' ], stuff, 'f' );
 
-   JSAN.require()
-      JSAN.require('Some.Class');
+   Just.require()
+      Just.require('Some.Class');
 
     Loads a class into your scope. This will not export any symbols.
 
-   JSAN.exporter()
-      JSAN.exporter(Test.More, 'plan', 'is', 'cmpOk');
+   Just.exporter()
+      Just.exporter(Test.More, 'plan', 'is', 'cmpOk');
 
     Export symbols from the class defined in the first argument to the
-    global scope. Note that the first argument to "JSAN.exporter()" is not a
+    global scope. Note that the first argument to "Just.exporter()" is not a
     string, but the actual class definition. The example above will export
     the functions "plan", "is", and "cmpOk" from the "Test.More" namespace
     to yours.
 
-   JSAN.addRepository()
-      JSAN.addRepository('js/private');
+   Just.addRepository()
+      Just.addRepository('js/private');
 
     Add any number of paths to "includePath". This will move the repository
     to the beginning of the list and it will be checked first for libraries.
     Calling "addRepository()" will add your include path for the entirety of
-    the request, no matter how many times you call "JSAN.use()".
+    the request, no matter how many times you call "Just.use()".
 
     As with use(), it will accept any combination of arrays and strings.
 
   Methods
    use()
   Compile Time
-    "JSAN" creates an interesting sort of compile time for libraries loaded
+    "Just" creates an interesting sort of compile time for libraries loaded
     through it. This means that code that does not exist inside of a
     function is considered *compile time* code. This has certain
-    implications when a library uses JSAN to import another library.
+    implications when a library uses Just to import another library.
 
   Namespaces
     JavaScript - exempting version 2 anyway - does not have a notion of
@@ -150,13 +150,13 @@ DESCRIPTION
     namespace. The namespace must match the library name as well so "use()"
     can import the classes and functions correctly.
 
-    The name of this library, "JSAN", or the name of our testing system,
+    The name of this library, "Just", or the name of our testing system,
     "Test.Simple", are examples of namespaces. A namespace is built by
     defining objects at each level until you reach the final name.
 
-    Defining a namespace for JSAN is simple.
+    Defining a namespace for Just is simple.
 
-      var JSAN = {};
+      var Just = {};
 
     Defining the namespace for "Test.Simple" takes a little more work. First
     you have to create an object at the variable named "Test" if it doesn't
@@ -294,13 +294,13 @@ DESCRIPTION
       };
 
     At this point your library may have dependences. If that's the case you
-    can use "JSAN" to try and import them. This works because you have,
-    theoretically, modified the "JSAN.includePath" on your initial
+    can use "Just" to try and import them. This works because you have,
+    theoretically, modified the "Just.includePath" on your initial
     invocation of the library. So your libraries being "use()"d need not
     know anything about "includePath"s.
 
-      if (typeof JSAN != 'undefined') {
-          JSAN.use('Some.Dependency');
+      if (typeof Just != 'undefined') {
+          Just.use('Some.Dependency');
       }
 
    Functional Libraries
@@ -335,10 +335,10 @@ DESCRIPTION
       }
 
     At this point your library may have dependences. If that's the case you
-    can use "JSAN" to try and import them.
+    can use "Just" to try and import them.
 
-      if (typeof JSAN != 'undefined') {
-          JSAN.use('Some.Dependency');
+      if (typeof Just != 'undefined') {
+          Just.use('Some.Dependency');
       } else {
           if (Digest.MD5.DEBUG == true
               && typeof Some.Dependency == 'undefined') {
@@ -351,7 +351,7 @@ SEE ALSO
     <http://justatheory.com/computers/programming/javascript/emulating_names
     paces.html>.
 
-    Original JSAN Brainstorming,
+    Original Just Brainstorming,
     <http://use.perl.org/~schwern/journal/24112>.
 
     OpenJSAN, <http://openjsan.org>.

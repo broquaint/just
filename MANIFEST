@@ -1,8 +1,8 @@
 Changes
-doc/html/JSAN.html
-doc/pod/JSAN.pod
-doc/text/JSAN.txt
-lib/JSAN.js
+doc/html/Just.html
+doc/pod/Just.pod
+doc/text/Just.txt
+lib/Just.js
 MANIFEST			This list of files
 META.yml
 README

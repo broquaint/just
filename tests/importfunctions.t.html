@@ -1,10 +1,10 @@
 <html>
   <head>
-    <script type="text/javascript" src="../lib/JSAN.js"></script>
+    <script type="text/javascript" src="../lib/Just.js"></script>
   </head>
   <body>
     <pre id="test"><script>
-        JSAN.use('Test.Simple');
+        Just.use('Test.Simple');
         var test = new Test.Builder();
         test.plan({tests: 2});
         test.ok(typeof(plan) == 'function', 'Loaded plan function.');

@@ -1,7 +1,7 @@
-use Module::Build::JSAN;
+use Module::Build::Just;
 
-my $build = Module::Build::JSAN->new(
-    module_name    => 'JSAN',
+my $build = Module::Build::Just->new(
+    module_name    => 'Just',
     license        => 'artistic',
     dist_author    => 'John Cappiello <jcap@openjsan.org>',
     abstract       => 'JavaScript Archive Network',
