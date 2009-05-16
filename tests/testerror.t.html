@@ -17,8 +17,8 @@
         try {
             Just.use('Test.Moore');
         } catch (e) {
-            ok(/Couldn't load/.test(Just.errorMessage), 'message propigated');
-            ok(/Couldn't load/.test(e.message), 'message propigated through e');
+            ok(/Couldn't load|File not found/.test(Just.errorMessage), 'message propigated');
+            ok(/Couldn't load|File not found/.test(e.message), 'message propigated through e');
         }
     </script></pre>
   </body>
