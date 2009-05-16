@@ -7,10 +7,8 @@
         Just.use('Test.Simple', []);
         var test = new Test.Builder();
         test.plan({tests: 2});
-        try       { plan; test.ok( false, 'plan() managed to load ...?' ); }
-        catch (e) { test.ok(e.name == 'ReferenceError', 'Did not load plan function.') }
-        try       { ok; test.ok( false, 'ok() managed to load ...?' ); }
-        catch (e) { test.ok(e.name == 'ReferenceError', 'Did not load ok function.') }
+        test.ok(typeof this['plan'] == 'undefined', 'Did not load plan function.');
+        test.ok(typeof this['ok']   == 'undefined', 'Did not load ok function.');
     </script></pre>
   </body>
 </html>
