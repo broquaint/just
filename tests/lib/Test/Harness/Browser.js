@@ -1,5 +1,7 @@
 // # $Id: Kinetic.pm 1493 2005-04-07 19:20:18Z theory $
 
+alert("Test.Harness.Browser loaded");
+
 if (typeof JSAN != 'undefined') new JSAN().use('Test.Harness');
 
 Test.Harness.Browser = function () {};

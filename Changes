@@ -1,9 +1,21 @@
-      v0.11
+2010-04-4      v0.15
+
+  - Rewrote most of the code so as to improve quality.
+  - Wrapped the entire loader in an anonymous subroutine to improve packing
+    and so that you can easily rename JSAN to Just or to any other name.
+  - Got rid of all the functions with dangling underscores.
+  - Moved the Exporter outside of JSAN into Exporter.js
+  - Added jsan.observers so that you can add plugins such as the Exporter
+    into the jsan loading system.
+  - Added jsan.cwd to access the current working directory of the scripting
+    that is being evaluated.
+
+                v0.11
 
   - Added new response code checks for null (cached in Safari) and 304 (not
     modified, seen in Opera by Pawel Chmielowski). (David Wheeler).
 
-      v0.10
+                v0.10
 
   - ########## Dude, what happened here??? ##########
 

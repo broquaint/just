@@ -5,9 +5,10 @@
 <body>
 <script type="text/javascript">
     JSAN.errorLevel = 'die';
-    JSAN.use('Test.Harness');
-    JSAN.use('Test.Harness.Browser');
+    JSAN.require('Test.Harness');
+    JSAN.require('Test.Harness.Browser');
 
+	//alert( typeof Test.Harness.Browser );
     var t = new Test.Harness.Browser();
     
     t.runTests(
@@ -23,3 +24,4 @@
 </script>
 </body>
 </html>
+ 
