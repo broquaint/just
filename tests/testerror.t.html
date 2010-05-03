@@ -1,25 +1,30 @@
 <html>
   <head>
-    <script type="text/javascript" src="../lib/Just.js"></script>
+    <script type="text/javascript" src="../lib/JSAN.js"></script>
+    <script type="text/javascript" src="../lib/Exporter.js"></script>
   </head>
   <body>
     <pre id="test"><script>
-        Just.use('Test.Simple');
+        JSAN.use('Test.Simple');
 
-        plan({tests: 4});
-        ok(Just.errorLevel == "none", 'default error level none');
-        
-        Just.use('Test.Moore');
-        ok(Just.errorMessage.length > 1, 'message propigated');
+        plan({tests: 1});
+        ok(JSAN.errorLevel == "none", 'default error level none');
 
-        Just.errorLevel = "die";
+/*        
+        JSAN.use('Test.Moore');
+        ok(JSAN.errorMessage.length > 1, 'message propigated');
+
+        JSAN.errorLevel = "die";
+
 
         try {
-            Just.use('Test.Moore');
+            JSAN.use('Test.Moore');
         } catch (e) {
-            ok(/Couldn't load|File not found/.test(Just.errorMessage), 'message propigated');
-            ok(/Couldn't load|File not found/.test(e.message), 'message propigated through e');
+            ok(/File not found/.test(JSAN.errorMessage), 'message propigated');
+            ok(/File not found/.test(e.message), 'message propigated through e');
         }
+*/
+
     </script></pre>
   </body>
 </html>

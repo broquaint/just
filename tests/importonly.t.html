@@ -1,14 +1,16 @@
 <html>
   <head>
-    <script type="text/javascript" src="../lib/Just.js"></script>
+    <script type="text/javascript" src="../lib/JSAN.js"></script>
+    <script type="text/javascript" src="../lib/Exporter.js"></script>
   </head>
   <body>
     <pre id="test"><script>
-        Just.use('Test.Simple', 'plan');
+        JSAN.use('Test.Simple', 'plan');
         var test = new Test.Builder();
         test.plan({tests: 2});
-        test.ok(typeof(plan)      == 'function', 'Loaded plan function.');
-        test.ok(typeof this['ok'] == 'undefined', 'Did not load ok function.');
+        test.ok(typeof(plan) == 'function', 'Loaded plan function.');
+        try       { ok }
+        catch (e) { test.ok(e.name == 'ReferenceError', 'Did not load ok function.') }
     </script></pre>
   </body>
 </html>

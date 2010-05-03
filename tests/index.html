@@ -1,13 +1,14 @@
 <html>
 <head>
-  <script type="text/javascript" src="../lib/Just.js"></script>
+  <script type="text/javascript" src="../lib/JSAN.js"></script>
 </head>
 <body>
 <script type="text/javascript">
-    Just.errorLevel = 'die';
-    Just.use('Test.Harness');
-    Just.use('Test.Harness.Browser');
+    JSAN.errorLevel = 'die';
+    JSAN.require('Test.Harness');
+    JSAN.require('Test.Harness.Browser');
 
+	//alert( typeof Test.Harness.Browser );
     var t = new Test.Harness.Browser();
     
     t.runTests(
@@ -23,3 +24,4 @@
 </script>
 </body>
 </html>
+ 
